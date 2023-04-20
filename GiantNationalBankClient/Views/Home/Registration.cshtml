@@ -1,0 +1,73 @@
+﻿@using GiantNationalBankClient.Models
+@model RegistrationModel
+@{
+    ViewData["Title"] = "User Registration";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Complete this form to create a new user account. </p>
+  <section class="regForm">
+    <form asp-action="Registration" method="post">
+        <label for="Email">Email: </label>
+        <input asp-for="Email" /> <br />
+        <span aps-validation-for="Email" class="text-danger"></span><br />
+
+        <label for="FirstName">First Name: </label>
+        <input asp-for="FirstName" /> <br />
+        <span aps-validation-for="FirstName" class="text-danger"></span><br />
+
+        <label for="LastName">Last Name: </label>
+        <input asp-for="LastName" /> <br />
+        <span aps-validation-for="LastName" class="text-danger"></span><br />
+
+        <label for="Street1">Street Line 1: </label>
+        <input asp-for="Street1" /> <br />
+        <span aps-validation-for="Street1" class="text-danger"></span><br />
+
+        <label for="Street2">Street Line 2: </label>
+        <input asp-for="Street2" /> <br />
+        <span aps-validation-for="Street2" class="text-danger"></span><br />
+
+        <label for="City">City: </label>
+        <input asp-for="City" /> <br />
+        <span aps-validation-for="City" class="text-danger"></span><br />
+
+        <label for="State">State: </label>
+        <input asp-for="State" /> <br />
+        <span aps-validation-for="State" class="text-danger"></span><br />
+
+        <label for="ZipCode">ZipCode: </label>
+        <input asp-for="ZipCode" /> <br />
+        <span aps-validation-for="ZipCode" class="text-danger"></span><br />
+
+        <label for="Phone">Phone: </label>
+        <input asp-for="Phone" /> <br />
+        <span aps-validation-for="Phone" class="text-danger"></span><br />
+
+        <p></p>
+
+        <h4>Login Information</h4>
+
+        <label for="Username">Username: </label>
+        <input asp-for="Username" /> <br />
+        <span aps-validation-for="Username" class="text-danger"></span><br />
+
+        <label for="Password">Password: </label>
+        <input asp-for="Password" /> <br />
+        <span aps-validation-for="Password" class="text-danger"></span><br />
+
+
+        <input asp-for="UserType" value="User"/> <br />
+
+        <p></p>
+        <button type="submit" value="Submit">Submit</button>
+
+    </form>
+  </section>
+
+
+  <footer>
+    <p>Copyright Protected. All rights reserved. Sample website for educational purposes only</p><br/>
+    <p>GIANT NATIONAL BANK</p>
+    <p>help@gnb.bank</p>
+  </footer>

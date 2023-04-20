@@ -1,0 +1,49 @@
+﻿
+@model LoginModel
+@{
+    ViewData["Title"] = "User Registration";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Complete this form to create a new user account. </p>
+  <section class="login">
+      <form asp-action="ProcessLogin" method="post">
+          <table>
+              <tr>
+                <td><label for="UserName"><b>Username</b></label></td>
+                <td><input type="text" placeholder="Enter Username" name="username" id="username" required></td>
+            </tr>
+            <tr>
+                <td><label for="Password"><b>Password</b></label></td>
+                <td><input type="password" placeholder="Enter Password" name="password" id="password" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" value="Submit">Login</button></td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>Log in as:
+                    @Html.DropDownList("UserType", new List<SelectListItem>
+                    {
+                        new SelectListItem{ Text = "User", Value = "User"},
+                        new SelectListItem{ Text = "Admin", Value = "Admin"},
+
+                    })
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p class="error">@ViewBag.ErrorMessage</p></td>
+            </tr>
+          </table>
+      </form>
+  </section>
+
+
+  <footer>
+    <p>Copyright Protected. All rights reserved. Sample website for educational purposes only</p><br/>
+    <p>GIANT NATIONAL BANK</p>
+    <p>help@gnb.bank</p>
+  </footer>

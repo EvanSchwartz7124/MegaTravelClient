@@ -1,0 +1,45 @@
+﻿@using GiantNationalBankClient.Models
+@model LoginResponseModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+  <section class="intro">
+    <h1>Agent Dashboard</h1>
+    <h4>Welcome @Model.AdminData.FirstName</h4>
+</section>
+<section class="dashboardLinks">
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Admin" asp-action="AllAccountsView">View All Accounts</a>
+        </li>
+    </ul>
+</section>
+  <section>
+    <h4>Your profile data</h4>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.AdminData.AdminID</td>
+                <td>@Model.AdminData.FirstName</td>
+                <td>@Model.AdminData.LastName</td>
+                <td>@Model.AdminData.Email</td>
+            </tr>
+
+        </tbody>
+    </table>
+ </section>
+
+  <section>
+      <h4>Account Stuff and Things</h4>
+  </section>
+
+

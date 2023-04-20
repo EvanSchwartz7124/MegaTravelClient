@@ -1,0 +1,52 @@
+﻿@using GiantNationalBankClient.Models
+@model LoginResponseModel
+@{
+    ViewData["Title"] = "User Dashboard";
+}
+
+  <section class="intro">
+    <h1>User Dashboard</h1>
+    <h4>Welcome @Model.UserData.FirstName</h4>
+</section>
+<section class="dashboardLinks">
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="User" asp-action="AllUserAccountsView" asp-route-userID="@Model.UserData.UserId">View Accounts</a>
+        </li>
+    </ul>
+</section>
+  <section>
+      <h4>Your profile data</h4>
+      <table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.UserData.FirstName</td>
+            <td>@Model.UserData.LastName</td>
+            <td>@Model.UserData.Email</td>
+            <td>@Model.UserData.Phone</td>
+            <td>@Model.UserData.Street1</td>
+            <td>@Model.UserData.Street2</td>
+            <td>@Model.UserData.City</td>
+            <td>@Model.UserData.State</td>
+            <td>@Model.UserData.ZipCode</td>
+            <td>@Html.ActionLink("Edit", "Edit", "User", new { id = Model.UserData.UserId })</td>
+        </tr>
+
+</tbody>
+</table>
+  </section>
+
+  <section>
+      <h4>Account Stuff and Things</h4>
+  </section>
+
+

@@ -1,0 +1,45 @@
+﻿@using GiantNationalBankClient.Models
+@model GetAccountsResponseModel
+@{
+    ViewData["Title"] = "User Accounts";
+}
+
+ <section class="intro">
+    <h1>User Dashboard</h1>
+</section>
+<section class="dashboardLinks">
+    <ul>
+        <li class="nav-item">
+            <a href="javascript: history.go(-1)">Back to Dashboard</a>
+            <br />
+            <a class="nav-link text-dark" asp-controller="User" asp-action="CreateAccount" asp-route-userID="@Model.UserID">Create New Account</a>
+        </li>
+    </ul>
+</section>
+<section>
+    <table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.accountList != null)
+        {
+                @foreach (var account in Model.accountList)
+                {
+                    <tr>
+                        <td>@account.AccountID</td>
+                        <td>@account.Balance</td>
+
+                        <td>@Html.ActionLink("View Transactions", "ViewTransactions", "User", new { accountID = @account.AccountID }, null)</td>
+                    </tr>
+                }
+        }
+        
+        
+
+    </tbody>
+    </table>
+</section>
